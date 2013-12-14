@@ -1,4 +1,8 @@
 SampleApp::Application.routes.draw do
+  resources :users
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
